@@ -1,0 +1,135 @@
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--navbar-h);
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 500;
+  gap: 16px;
+}
+
+.navbar-left { display: flex; align-items: center; gap: 14px; }
+.navbar-right { display: flex; align-items: center; gap: 8px; }
+
+/* Hamburger */
+.menu-toggle {
+  background: none; border: none; cursor: pointer;
+  padding: 8px; border-radius: var(--radius-md);
+  display: flex; flex-direction: column; gap: 5px;
+  transition: var(--transition);
+}
+.menu-toggle:hover { background: var(--bg-hover); }
+.menu-toggle span {
+  display: block; width: 20px; height: 2px;
+  background: var(--text-secondary);
+  border-radius: 2px; transition: var(--transition);
+}
+
+/* Brand */
+.navbar-brand {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; color: inherit;
+}
+.brand-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.brand-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; font-size: 0.95rem;
+  color: var(--text-primary);
+}
+.brand-sub { font-size: 10px; color: var(--text-muted); line-height: 1; }
+
+/* Icon Button */
+.icon-btn {
+  position: relative;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition);
+  color: var(--text-secondary);
+}
+.icon-btn:hover { border-color: var(--accent); background: var(--bg-hover); color: var(--text-primary); }
+
+.notif-badge {
+  position: absolute; top: -4px; right: -4px;
+  background: var(--danger); color: #fff;
+  font-size: 9px; font-weight: 800;
+  border-radius: var(--radius-full);
+  min-width: 16px; height: 16px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 3px;
+  border: 2px solid var(--bg-surface);
+}
+
+/* User Button */
+.user-menu-wrap { position: relative; }
+.user-btn {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 5px 12px 5px 6px;
+  cursor: pointer; transition: var(--transition);
+  max-width: 200px;
+}
+.user-btn:hover { border-color: var(--accent); background: var(--bg-hover); }
+
+.avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  object-fit: cover; flex-shrink: 0;
+  border: 2px solid var(--accent-dark);
+}
+
+.user-info { display: flex; flex-direction: column; align-items: flex-start; }
+.user-name { font-size: 12.5px; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+
+.role-badge {
+  font-size: 9px; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+.role-badge.admin       { background: rgba(99,102,241,0.2); color: var(--accent-light); }
+.role-badge.user        { background: rgba(16,185,129,0.2); color: var(--success); }
+.role-badge.technician  { background: rgba(245,158,11,0.2); color: var(--warning); }
+
+.chevron { font-size: 10px; color: var(--text-muted); }
+
+/* Dropdown */
+.dropdown-menu {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  min-width: 210px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  z-index: 600;
+  animation: slideUp 0.15s ease;
+}
+.dropdown-header { padding: 14px 16px; }
+.user-name-full { font-size: 13.5px; font-weight: 700; color: var(--text-primary); }
+.user-email     { font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
+.dropdown-divider { height: 1px; background: var(--border); margin: 0; }
+.dropdown-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 16px; font-size: 13.5px; font-weight: 500;
+  color: var(--text-secondary); cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none; width: 100%;
+  background: none; border: none; text-align: left;
+  font-family: 'Inter', sans-serif;
+}
+.dropdown-item:hover { background: var(--bg-hover); color: var(--text-primary); }
+.dropdown-item.danger:hover { background: rgba(239,68,68,0.1); color: var(--danger); }
