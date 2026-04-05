@@ -1,0 +1,143 @@
+.ticket-create-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ticket-form-card {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 3rem;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.form-header h1 {
+  font-size: 2rem;
+  color: var(--text);
+  margin: 1rem 0 0.5rem;
+}
+
+.form-header p {
+  color: var(--secondary);
+}
+
+.ticket-form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.ticket-form .full-width {
+  grid-column: span 2;
+}
+
+.ticket-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ticket-form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ticket-form input, 
+.ticket-form select, 
+.ticket-form textarea {
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  font-family: inherit;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.ticket-form input:focus, 
+.ticket-form select:focus, 
+.ticket-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.attachments-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--background);
+  border-radius: var(--radius);
+  border: 2px dashed var(--border);
+}
+
+.file-input-label {
+  cursor: pointer;
+  color: var(--primary) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.attachment-previews {
+  display: flex;
+  gap: 1rem;
+}
+
+.preview-item {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.preview-item button {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ticket-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .ticket-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .ticket-form .full-width {
+    grid-column: span 1;
+  }
+}
