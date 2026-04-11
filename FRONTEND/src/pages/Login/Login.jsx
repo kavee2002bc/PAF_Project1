@@ -53,6 +53,10 @@ const Login = () => {
     }
   };
 
+  const handleGoogleLogin = () => {
+    window.location.href = 'http://localhost:8080/oauth2/authorization/google';
+  };
+
   return (
     <div className="login-page">
       <div className="login-card">
@@ -122,6 +126,10 @@ const Login = () => {
 
         {mode === 'login' ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <button onClick={handleGoogleLogin}
+              className="google-login-btn" disabled={loading}>
+              Continue with Google
+            </button>
             <button onClick={() => quickLogin('admin@campus.edu', 'admin123')}
               className="google-login-btn" disabled={loading}>
               ⚙️ Login as Admin (admin@campus.edu)

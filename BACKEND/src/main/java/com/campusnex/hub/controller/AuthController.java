@@ -32,6 +32,9 @@ public class AuthController {
 
     @GetMapping("/me")
     public ResponseEntity<Map<String, Object>> me(@AuthenticationPrincipal User user) {
+        if (user == null) {
+            return ResponseEntity.status(401).build();
+        }
         return ResponseEntity.ok(Map.of(
                 "id",             user.getId(),
                 "name",           user.getName(),

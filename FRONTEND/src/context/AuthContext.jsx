@@ -33,6 +33,13 @@ export const AuthProvider = ({ children }) => {
     return data;
   }, []);
 
+  const setAuth = useCallback((token, userInfo) => {
+    const authData = { token, ...userInfo };
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(authData));
+    setUser(authData);
+  }, []);
+
   const logout = useCallback(() => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -41,9 +48,10 @@ export const AuthProvider = ({ children }) => {
 
   const isAdmin       = user?.role === 'ADMIN';
   const isTechnician  = user?.role === 'TECHNICIAN';
+  const isUser        = user?.role === 'USER';
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout, isAdmin, isTechnician }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, setAuth, isAdmin, isTechnician, isUser }}>
       {children}
     </AuthContext.Provider>
   );

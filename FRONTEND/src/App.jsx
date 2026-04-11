@@ -21,6 +21,7 @@ import TicketList         from './pages/Tickets/TicketList';
 import TicketCreate       from './pages/Tickets/TicketCreate';
 import TicketDetails      from './pages/Tickets/TicketDetails';
 import AdminBookingDashboard from './pages/Admin/AdminBookingDashboard';
+import OAuth2Callback     from './pages/OAuth2Callback/OAuth2Callback';
 
 import './App.css';
 
@@ -89,6 +90,7 @@ function App() {
               {/* Public - Authentication Routes */}
               <Route path="/login" element={<UserAuthPage />} />
               <Route path="/admin-login" element={<AdminAuthPage />} />
+              <Route path="/oauth2/callback" element={<OAuth2Callback />} />
 
               {/* User + Admin routes */}
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
